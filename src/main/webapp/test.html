@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<link rel="stylesheet" type="text/css" href="bower_components/dhtmlxWindows/codebase/dhtmlxwindows.css"/>
+<script src="bower_components/dhtmlxWindows/codebase/dhtmlxwindows.js"></script> 
+<script type="text/javascript">
+showWindow = function(){
+	var dhxWins = new dhtmlXWindows();
+	//创建一个窗口容器对象
+	//dhxWins.enableAutoViewport(false);
+	//禁止窗口自动适应大小
+	dhxWins.setViewport(350, 50, 400, 400);
+	//设置窗口视图大小
+	dhxWins.vp.style.border = "#909090 1px solid";
+	//定义窗口窗口对象的边框
+	//dhxWins.setImagePath("../../codebase/imgs/");
+	//设置窗口容器对象所需图片路径
+
+	//以下为创建具体窗口的代码
+	var w1 = dhxWins.createWindow("w1", 10, 10, 320, 240);
+	//创建一个左边距10,顶边10,宽度320,高度240的子窗口
+	w1.setText("dhtmlxWindow");
+	//设置窗口标题
+	w1.button("close").disable();
+	//设置w1窗口的关闭按钮禁止
+	w1.button("help").show();
+	//添加w1窗口帮助按钮
+
+
+	//挂接一个事件,当点击帮助按钮时执行以下代码
+	dhxWins.window("w1").attachEvent("onHelp", function(){
+	    alert("button  was clicked");
+	});
+
+	//挂接一个事件,当点击最小化按钮时执行以下代码
+	w1.button("park").attachEvent("onClick", function(){
+	    alert("button was clicked");
+	});
+}
+
+</script>
+</head>
+
+<body>
+
+
+<div>
+<button type="button" onclick="showWindow()">show window</button>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br><p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br><p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br><p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+   <p>I am some content</p>
+   <br>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href='../bootstrap/dist/css/bootstrap.css' rel='stylesheet'>
+<link href='ladda.css' rel='stylesheet'>
+<script src="../jquery/jquery.min.js"></script>
+<script src="../bootstrap/dist/js/bootstrap.js"></script>
+<script src="ladda.js"></script>
+<script type="text/javascript">
+
+$(window).load(function(){
+            // Bind normal buttons
+			//Ladda.bind( 'div:not(.progress-demo) button', { timeout: 1500 } );
+
+			// Bind progress buttons and simulate loading progress
+			Ladda.bind( '.progress-demo button', {
+				callback: function( instance ) {
+					var progress = 0;
+					var interval = setInterval( function() {
+						progress = Math.min( progress + Math.random() * 0.1, 1 );
+						instance.setProgress( progress );
+
+						if( progress === 1 ) {
+							instance.stop();
+							clearInterval( interval );
+						}
+					}, 200 );
+				}
+			} );
+
+			// You can control loading explicitly using the JavaScript API
+			// as outlined below:
+			alert(document.querySelector( '.ladda-button[data-style=zoom-in]' ));
+			 var l = Ladda.create( document.querySelector( '.ladda-button[data-style=zoom-in]' ) );
+			 l.start();
+			// l.stop();
+			// l.toggle();
+			// l.isLoading();
+			// l.setProgress( 0-1 );
+});
+
+</script>
+</head>
+<body>
+<!-- SUBMITTED as a Feature: March 1, 2014 - 12:45am  -->
+
+<div class="container">
+<div class="row">
+<br>
+<h3>Mr. M.'s Buttons with Built-in Loading Indicators<small> - bootsnipp.com style</small></h3>
+
+<p> Original Ladda UI concept by
+    <a href="http://hakim.se">Hakim El Hattab</a>
+    <a href="http://twitter.com/hakimel">@hakimel</a>
+    examples adapted to work with Bootstrap 3 by
+    <a href="http://twitter.com/msurguy" target="_blank">@msurguy</a>
+</p>
+
+<blockquote>
+    Sample of ""Save snippet" button, same behavior as bootsnipp.com.
+    <br><br>
+<p>
+    <button class="btn btn-primary ladda-button" data-style="expand-right">
+        <span class="ladda-label"> Save snippet </span>
+    </button>
+</p>
+</blockquote>
+</div> <!-- /.row --> 
+</div> <!-- /.container -->
+
+<div class="container">
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3 text-center">
+
+<hr>
+<h4>Other examples of what you can do with Ladda's buttons</h4>    
+<hr>
+
+<p>
+<button class="btn btn-primary ladda-button" data-style="expand-left"><span class="ladda-label">expand-left</span></button>
+<button class="btn btn-primary ladda-button" data-style="expand-right"><span class="ladda-label">expand-right</span></button>
+<button class="btn btn-primary ladda-button" data-style="expand-up"><span class="ladda-label">expand-up</span></button>
+<button class="btn btn-primary ladda-button" data-style="expand-down"><span class="ladda-label">expand-down</span></button>
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 col-md-offset-3 text-center">
+<p>
+<button class="btn btn-info ladda-button" data-style="zoom-in"><span class="ladda-label">zoom-in</span></button>
+<button class="btn btn-info ladda-button" data-style="zoom-out"><span class="ladda-label">zoom-out</span></button>
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 col-md-offset-3 text-center">
+<p>
+<button class="btn btn-warning ladda-button" data-style="slide-left"><span class="ladda-label">slide-left</span></button>
+<button class="btn btn-warning ladda-button" data-style="slide-right"><span class="ladda-label">slide-right</span></button>
+<button class="btn btn-warning ladda-button" data-style="slide-up"><span class="ladda-label">slide-up</span></button>
+<button class="btn btn-warning ladda-button" data-style="slide-down"><span class="ladda-label">slide-down</span></button>
+</p>
+<p>
+<button class="btn btn-warning ladda-button" data-style="contract"><span class="ladda-label">contract</span></button>
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 col-md-offset-3 text-center progress-demo">
+<p>Built-in progress bar</p>
+<p>
+<button class="btn btn-danger ladda-button" data-style="expand-right"><span class="ladda-label">expand-right</span></button>
+<button class="btn btn-danger ladda-button" data-style="expand-left"><span class="ladda-label">expand-left</span></button>
+<button class="btn btn-danger ladda-button" data-style="contract"><span class="ladda-label">contract</span></button>
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 col-md-offset-3 text-center">
+<p>Sizes</p>
+<p>
+<button class="btn btn-primary btn-xs ladda-button" data-style="expand-right" data-size="xs"><span class="ladda-label">extra small</span></button>
+<button class="btn btn-primary btn-sm ladda-button" data-style="expand-right" data-size="s"><span class="ladda-label">small</span></button>
+<button class="btn btn-primary btn-lg ladda-button" data-style="expand-right" data-size="l"><span class="ladda-label">large</span></button>
+</p>
+</div>
+
+</div>  <!-- /.row -->
+
+<hr>
+    <a href="http://validator.w3.org/check?uri=http://bootsnipp.com/iframe/62or&ss=1"> <span class="glyphicon glyphicon-check green"></span> HTML<sup>5</sup></a>
+
+
+</div> <!-- /.container -->
+
+
+</body>
+</html>

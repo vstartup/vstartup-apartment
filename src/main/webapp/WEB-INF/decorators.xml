@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/layouts/">
+	<excludes>
+		<pattern>/error/*</pattern>
+		<pattern>/static/*</pattern>
+		<pattern>css/*</pattern>
+		<pattern>bower_components/*</pattern>
+		<pattern>fonts/*</pattern>
+		<pattern>img/*</pattern>
+		<pattern>js/*</pattern>
+		<pattern>misc/*</pattern>
+		<pattern>/login.jsp</pattern>
+	</excludes>
+	
+	
+	<decorator name="default" page="decorator.jsp">
+		<pattern>/views/*</pattern>
+		<pattern>/customer/index</pattern>
+		
+	</decorator>
+</decorators>
