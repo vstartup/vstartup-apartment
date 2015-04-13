@@ -174,11 +174,8 @@
 var msie = navigator.userAgent.match(/msie/i);//is the ie explorer
 $('a.vsajax-link').click(function (e) {
     if (msie) e.which = 1;//is the IE
-    alert(e.which != 1);
-    alert(!$('#is-ajax').prop('checked'));
-    alert( $(this).parent('li').hasClass('active'));
     
-    if (e.which != 1 || !$('#is-ajax').prop('checked') || $(this).parent('li').hasClass('active')) return false;
+    if (e.which != 1  || $(this).parent('li').hasClass('active')) return false;
     e.preventDefault();
     $('.sidebar-nav').removeClass('active');
     $('.navbar-toggle').removeClass('active');
